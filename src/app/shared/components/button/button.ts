@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 
 @Component({
-    selector: 'app-button',
-    templateUrl: './button.html',
-    imports: [ButtonModule]
+  selector: 'app-button',
+  templateUrl: './button.html',
+  imports: [ButtonModule],
 })
-export class Button {}
+export class Button {
+  readonly title = input.required<string>();
+  readonly subTitle = input<string>();
+  readonly onClick = output<void>();
+}

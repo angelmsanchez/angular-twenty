@@ -1,3 +1,4 @@
-<div class="card flex justify-center">
-    <p-button label="Check" />
+<div class="card flex justify-center" (click)="onClick.emit()">
+    <p-button [label]="title()" />
+    {{subTitle()}}
 </div>

@@ -1,3 +1,8 @@
-<section class="task">{{title}}
-    <app-button />
+<section class="task">
+  <app-button
+    title="title button"
+    [subTitle]="subTitle"
+    (onClick)="handleClickButton()"
+  />
+  <app-title [title]="title()" />
 </section>
