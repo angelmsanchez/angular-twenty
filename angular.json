@@ -6,7 +6,7 @@
     "angular-twenty": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component": {
+        "@ngneat/spectator:spectator-component": {
           "style": "scss"
         }
       },
@@ -26,9 +26,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": ["src/styles.scss"],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -85,10 +83,11 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ]
+            "styles": ["src/styles.scss"]
           }
+        },
+        "test-vitest": {
+          "builder": "@analogjs/vitest-angular:test"
         }
       }
     }
