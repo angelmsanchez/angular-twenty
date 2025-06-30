@@ -4,5 +4,16 @@
     [subTitle]="subTitle"
     (onClick)="handleClickButton()"
   />
+  <br />
+  <app-button
+    title="Clear title"
+    (onClick)="clearTitle()"
+  />
+  <br />
+  @if (title()) {
   <app-title [title]="title()" />
+  }
+  <app-title [title]="titleUpper()" />
+  <app-title [title]="titleLinked()" />
+
 </section>
