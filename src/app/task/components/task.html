@@ -5,10 +5,7 @@
     (onClick)="handleClickButton()"
   />
   <br />
-  <app-button
-    title="Clear title"
-    (onClick)="clearTitle()"
-  />
+  <app-button title="Clear title" (onClick)="clearTitle()" />
   <br />
   @if (title()) {
   <app-title [title]="title()" />
@@ -16,4 +13,9 @@
   <app-title [title]="titleUpper()" />
   <app-title [title]="titleLinked()" />
 
+  <ul>
+    @for (user of users(); track trackByUserLogin(user)) {
+    <li>{{ user.login }}</li>
+    }
+  </ul>
 </section>

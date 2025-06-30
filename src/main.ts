@@ -3,7 +3,14 @@ import { appConfig } from './app/app.config';
 import { App } from './app/app';
 import { environment } from './environments/environment';
 
-console.log('Environment:', environment.production);
+async function prepareApp() {
+  if (!environment.production) {
+    const { MockServiceWorker } = await import('./mocks/browser');
+    return MockServiceWorker.start();
+  }
+  return Promise.resolve();
+}
 
-bootstrapApplication(App, appConfig)
-  .catch((err) => console.error(err));
+prepareApp().then(() => {
+  bootstrapApplication(App, appConfig).catch((err) => console.error(err));
+});
