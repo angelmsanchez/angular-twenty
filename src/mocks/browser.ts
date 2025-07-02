@@ -7,13 +7,9 @@ export const userHandler = [
     const { user } = response.params;
     return HttpResponse.json(users);
   }),
-  http.get('https://api.github.com/users/:user', (response) => {
-    console.log('Mocking GET request for user:', response);
+  http.get('https://api.github.com/users/:id', (response) => {
     const { user } = response.params;
-    return HttpResponse.json({
-      name: `mocked-${user}`,
-      bio: 'mocked-bio',
-    });
+    return HttpResponse.json(users[0]);
   }),
 ];
 const handlers = [...userHandler];

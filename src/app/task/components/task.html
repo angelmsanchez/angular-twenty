@@ -12,7 +12,7 @@
   }
   <app-title [title]="titleUpper()" />
   <app-title [title]="titleLinked()" />
-
+  <br />
   <ul>
     @for (user of users(); track trackByUserLogin(user)) {
     <li>{{ user.login }}</li>

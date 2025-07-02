@@ -3,8 +3,12 @@ import {
   computed,
   inject,
   linkedSignal,
+  OnChanges,
   OnInit,
+  resource,
   signal,
+  SimpleChange,
+  SimpleChanges,
 } from '@angular/core';
 import { Button } from '../../shared/components/button/button';
 import { Title } from '../../shared/components/title/title';
@@ -18,18 +22,30 @@ import { UserInterface } from '../interfaces/user.interface';
   styleUrl: './task.scss',
   imports: [Button, Title, HttpClientModule],
 })
-export class Task implements OnInit {
+export class Task implements OnInit , OnChanges{
   title = signal('task-twenty');
   users = signal<UserInterface[]>([]);
   titleUpper = computed(() => this.title().toUpperCase());
   titleLinked = linkedSignal(() => this.title());
   counter = signal(0);
   protected subTitle = 'subTitle string';
+
   private taskService = inject(TaskService);
-  http = inject(HttpClient);
+  private http = inject(HttpClient);
+
+  userResource = resource({
+    loader: () => {
+      return fetch(`https://api.github.com/users/2`);
+    },
+  });
 
   ngOnInit(): void {
     this.getUsers();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('ngOnChanges', changes);
+    console.log('user', this.userResource.value());
   }
 
   handleClickButton(): void {
