@@ -7,6 +7,6 @@ export const routes: Routes = [
   },
   {
     path: 'task',
-    loadComponent: () => import('./task/components/task').then((m) => m.Task),
+    loadComponent: () => import('./task/components/tasks/task').then((m) => m.Task),
   },
 ];
