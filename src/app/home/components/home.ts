@@ -1,11 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, computed, linkedSignal, signal } from '@angular/core';
+import { Button } from '../../shared/components/button/button';
+import { Title } from '../../shared/components/title/title';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.html',
   styleUrl: './home.scss',
-  imports: [],
+  imports: [Button, Title],
 })
 export class Home {
-  protected title = 'Home-twenty';
+  title = signal('Home-twenty');
+  titleUpper = computed(() => this.title().toUpperCase());
+  titleLinked = linkedSignal(() => this.title());
+  counter = signal(0);
+  subTitle = 'subTitle';
+
+  handleClickButton(): void {
+    console.log('Button clicked: ' + this.counter() + ' times');
+    this.counter.update((value) => value + 1);
+    this.title.update((value) => value + this.counter());
+  }
+
+  clearTitle(): void {
+    this.title.set('');
+    this.titleLinked.set('clear title');
+  }
 }
