@@ -1,10 +1,4 @@
-<div
-  class="card flex justify-center"
-  role="button"
-  tabIndex="0"
-  (click)="handleClick.emit()"
->
-  <p-button [label]="title()" />
+<div class="card flex justify-center">
+  <p-button [label]="title()" (click)="handleClick.emit()" />
   {{ subTitle() }}
 </div>
-s

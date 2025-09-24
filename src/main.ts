@@ -3,7 +3,7 @@ import { appConfig } from './app/app.config';
 import { App } from './app/app';
 import { environment } from './environments/environment';
 
-async function prepareApp() {
+async function prepareApp(): Promise<void | ServiceWorkerRegistration> {
   if (!environment.production) {
     const { MockServiceWorker } = await import('./mocks/browser');
     return MockServiceWorker.start();

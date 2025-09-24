@@ -1,4 +1,4 @@
-import { Component, computed, linkedSignal, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, linkedSignal, signal } from '@angular/core';
 import { Button } from '../../shared/components/button/button';
 import { Title } from '../../shared/components/title/title';
 
@@ -7,6 +7,7 @@ import { Title } from '../../shared/components/title/title';
   templateUrl: './home.html',
   styleUrl: './home.scss',
   imports: [Button, Title],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Home {
   readonly title = signal('Home-twenty');

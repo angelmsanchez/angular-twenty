@@ -110,12 +110,6 @@ module.exports = tseslint.config(
       ...angular.configs.templateAccessibility,
     ],
     rules: {
-      '@angular-eslint/template/interactive-supports-focus': [
-        'error',
-        {
-          allowList: ['tabIndex'],
-        },
-      ],
       // Angular template best practices
       '@angular-eslint/template/attributes-order': [
         'error',

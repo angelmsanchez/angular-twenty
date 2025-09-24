@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class TaskService {
-  clearTitle() {
+  clearTitle(): string {
     return '';
   }
 }
