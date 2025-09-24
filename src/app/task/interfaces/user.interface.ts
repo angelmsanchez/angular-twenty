@@ -1,4 +1,4 @@
-export interface UserInterface {
+export type UserInterface = {
   login: string;
   id: number;
   node_id: string;
@@ -18,4 +18,4 @@ export interface UserInterface {
   type: string;
   user_view_type: string;
   site_admin: boolean;
-}
+};

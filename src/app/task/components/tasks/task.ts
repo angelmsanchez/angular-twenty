@@ -1,4 +1,11 @@
-import { Component, inject, OnChanges, OnInit, resource, SimpleChanges } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnChanges,
+  resource,
+  SimpleChanges,
+} from '@angular/core';
 import { TaskService } from '../../services/task.service';
 import { HttpClient } from '@angular/common/http';
 import { ListUsers } from '../list-users/list-users';
@@ -10,6 +17,7 @@ import { patchState } from '@ngrx/signals';
   templateUrl: './task.html',
   styleUrl: './task.scss',
   imports: [ListUsers],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Task implements OnChanges {
   readonly taskService = inject(TaskService);

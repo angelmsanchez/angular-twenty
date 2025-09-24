@@ -3,12 +3,10 @@ import { setupWorker } from 'msw/browser';
 import { users } from './data/users';
 
 export const userHandler = [
-    http.get('https://api.github.com/users/', (response) => {
-    const { user } = response.params;
+  http.get('https://api.github.com/users/', () => {
     return HttpResponse.json(users);
   }),
-  http.get('https://api.github.com/users/:id', (response) => {
-    const { user } = response.params;
+  http.get('https://api.github.com/users/:id', () => {
     return HttpResponse.json(users[0]);
   }),
 ];

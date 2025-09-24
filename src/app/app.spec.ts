@@ -1,5 +1,5 @@
 // import { describe, beforeEach, it } from 'vitest';
-import { Spectator, createComponentFactory } from '@ngneat/spectator';
+import { createComponentFactory, Spectator } from '@ngneat/spectator';
 import { App } from './app';
 
 describe('App', () => {

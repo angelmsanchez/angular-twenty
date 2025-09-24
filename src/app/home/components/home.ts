@@ -9,10 +9,10 @@ import { Title } from '../../shared/components/title/title';
   imports: [Button, Title],
 })
 export class Home {
-  title = signal('Home-twenty');
-  titleUpper = computed(() => this.title().toUpperCase());
-  titleLinked = linkedSignal(() => this.title());
-  counter = signal(0);
+  readonly title = signal('Home-twenty');
+  readonly titleUpper = computed(() => this.title().toUpperCase());
+  readonly titleLinked = linkedSignal(() => this.title());
+  readonly counter = signal(0);
   subTitle = 'subTitle';
 
   handleClickButton(): void {

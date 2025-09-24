@@ -9,5 +9,5 @@ import { ButtonModule } from 'primeng/button';
 export class Button {
   readonly title = input.required<string>();
   readonly subTitle = input<string>();
-  readonly onClick = output<void>();
+  readonly handleClick = output<void>();
 }

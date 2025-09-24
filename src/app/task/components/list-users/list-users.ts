@@ -9,7 +9,7 @@ import { UserInterface } from '../../interfaces/user.interface';
     <p>Users:</p>
     <ul>
       @for (user of store.sortedUsers(); track trackByUserLogin(user)) {
-      <li>{{ user.login }}</li>
+        <li>{{ user.login }}</li>
       }
     </ul>
     <p>Order: {{ store.filter.order() }}</p>

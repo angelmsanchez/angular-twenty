@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 export const users = [
   {
     login: 'name 1',

@@ -10,10 +10,11 @@
     "test": "ng test",
     "test:vitest": "ng run spectator:test-vitest",
     "serve:ssr:angular-twenty": "node dist/angular-twenty/server/server.mjs",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "prettier": "prettier --write \"src/**/*.{ts,html,css,scss}\""
   },
   "prettier": {
-    "printWidth": 100,
+    "printWidth": 80,
     "singleQuote": true,
     "overrides": [
       {
@@ -53,6 +54,8 @@
     "@types/node": "^20.17.19",
     "angular-eslint": "20.3.0",
     "eslint": "^9.35.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
     "jasmine-core": "~5.7.0",
     "jsdom": "^26.1.0",
     "karma": "~6.4.0",
@@ -61,6 +64,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "msw": "^2.10.2",
+    "prettier": "^3.6.2",
     "typescript": "~5.9.2",
     "typescript-eslint": "8.40.0",
     "vite-tsconfig-paths": "^5.1.4",
