@@ -13,4 +13,12 @@ export class UserService {
     );
     return users;
   }
+
+  async add(body: Partial<UserInterface>): Promise<Observable<UserInterface>> {
+    const user = await this.http.post<UserInterface>(
+      'https://api.github.com/users/',
+      body,
+    );
+    return user;
+  }
 }

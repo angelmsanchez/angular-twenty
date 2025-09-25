@@ -13,6 +13,10 @@ import {
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 import { provideHttpClient } from '@angular/common/http';
+import {
+  provideTanStackQuery,
+  QueryClient,
+} from '@tanstack/angular-query-experimental';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -26,5 +30,6 @@ export const appConfig: ApplicationConfig = {
       },
     }),
     provideHttpClient(),
+    provideTanStackQuery(new QueryClient()),
   ],
 };

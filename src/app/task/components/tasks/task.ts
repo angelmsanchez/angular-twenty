@@ -9,6 +9,7 @@ import {
 import { TaskService } from '../../services/task.service';
 import { HttpClient } from '@angular/common/http';
 import { ListUsers } from '../list-users/list-users';
+import { ListTodos } from '../list-todos/list-todos';
 import { UserStore } from '../../store/user.store';
 import { patchState } from '@ngrx/signals';
 
@@ -16,7 +17,7 @@ import { patchState } from '@ngrx/signals';
   selector: 'app-task',
   templateUrl: './task.html',
   styleUrl: './task.scss',
-  imports: [ListUsers],
+  imports: [ListUsers, ListTodos],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Task implements OnChanges {
