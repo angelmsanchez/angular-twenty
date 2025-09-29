@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, computed, linkedSignal, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  linkedSignal,
+  signal,
+} from '@angular/core';
 import { Button } from '../../shared/components/button/button';
 import { Title } from '../../shared/components/title/title';
 
