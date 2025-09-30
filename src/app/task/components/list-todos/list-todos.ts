@@ -36,7 +36,7 @@ export class ListTodos {
     mutationFn: (todo: Todo): ReturnType<TodoService['addTodo']> =>
       this.todoService.addTodo(todo),
     onSuccess: (): void => {
-      this.queryClient.invalidateQueries({ queryKey: ['allTodos'] });
+      this.queryClient.invalidateQueries({ queryKey: ['getTodos'] });
     },
   }));
 

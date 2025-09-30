@@ -30,6 +30,14 @@ export const appConfig: ApplicationConfig = {
       },
     }),
     provideHttpClient(),
-    provideTanStackQuery(new QueryClient()),
+    provideTanStackQuery(
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            staleTime: Infinity,
+          },
+        },
+      }),
+    ),
   ],
 };
